@@ -57,6 +57,26 @@ public class Discovery extends CordovaPlugin {
   public Discovery() {
   }
 
+  public void getBroadcastAddress(final JSONObject opts, final CallbackContext callbackContext) {
+    new AsyncTask<Integer, Void, Void>() {
+
+      @Override
+      protected Void doInBackground(Integer...params) {
+        try {
+          InetAddress address = getBroadcastAddress();
+
+          callbackContext.success(address);
+
+        } catch(Exception e) {
+          callbackContext.error(e.getMessage());
+          Log.e(TAG, "Exception while getting address");
+          e.printStackTrace();
+        }
+        return null;
+      }
+    }.execute();
+  }
+
   InetAddress getBroadcastAddress() throws Exception {
     WifiManager wifi = (WifiManager) mContext.getSystemService(Context.WIFI_SERVICE);
     DhcpInfo dhcp = wifi.getDhcpInfo();
@@ -160,9 +180,10 @@ public class Discovery extends CordovaPlugin {
 
       doIdentify(opts, callbackContext);
       return true;
-    }
-     
+    } else if (action.equals("getBroadcastAddress")) {
+
     return false;
+    }
   }
 
 

@@ -33,6 +33,11 @@
 
 NSString* callback;
 
+- (NSString*)getBroadcastAddress:(CDVInvokedUrlCommand*)command {
+  CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:[self getBroadcastAddress]];
+  [self.commandDelegate sendPluginResult:pluginResult callbackId:callback];
+}
+
 - (NSString*) getBroadcastAddress {
   NSString* address = @"error";
   struct ifaddrs *interface = NULL, *interfaceList;
