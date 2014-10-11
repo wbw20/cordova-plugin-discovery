@@ -21,7 +21,6 @@
 #import <Cordova/CDVPlugin.h>
 
 @interface CDVDiscovery : CDVPlugin
-{}
 
 - (void)identify:(CDVInvokedUrlCommand*)command;
 - (void)getBroadcastAddress:(CDVInvokedUrlCommand*)command;

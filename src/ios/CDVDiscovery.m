@@ -26,9 +26,6 @@
 #import <Cordova/CDV.h>
 #import "CDVDiscovery.h"
 
-@interface CDVDiscovery () {}
-@end
-
 @implementation CDVDiscovery
 
 NSString* callback;
