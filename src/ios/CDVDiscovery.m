@@ -35,7 +35,7 @@ NSString* callback;
 
 - (void)getBroadcastAddress:(CDVInvokedUrlCommand*)command {
   CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"hello world"];
-  [self.commandDelegate sendPluginResult:pluginResult callbackId:callback];
+  [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
 - (NSString*) getBroadcastAddress {
