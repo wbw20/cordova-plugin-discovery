@@ -26,9 +26,9 @@ var Discovery = {
     exec(successCallback, errorCallback, "Discovery", "identify", [opts]);
   },
 
-  getBroadcastAddress: function(successCallback, errorCallback, opts) {
-    console.log('Doing network name', opts);
-    exec(successCallback, errorCallback, "Discovery", "getBroadcastAddress", [opts]);
+  getBroadcastAddress: function(successCallback, errorCallback) {
+    console.log('Doing network name');
+    exec(successCallback, errorCallback, "Discovery", "getBroadcastAddress", []);
   }
 }
 
