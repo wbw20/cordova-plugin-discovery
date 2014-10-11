@@ -39,7 +39,7 @@ NSString* callback;
     } else { 
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Arg was null"];
     }
-    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+    [self.success sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
 - (NSString*) getBroadcastAddress {
