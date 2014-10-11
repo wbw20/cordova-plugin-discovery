@@ -24,6 +24,6 @@
 {}
 
 - (void)identify:(CDVInvokedUrlCommand*)command;
-- (NSString*)getBroadcastAddress:(CDVInvokedUrlCommand*)command;
+- (void)getBroadcastAddress:(CDVInvokedUrlCommand*)command;
 
 @end
